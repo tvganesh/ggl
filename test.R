@@ -51,56 +51,19 @@ load("batsmen.RData")
 # Get individual teams batsmen data
 
 # Get CSK batsmen
-batsmen <- csk_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-csk_batsmen <- sort(batsmen)
+csk_batsmen <- getBatsmen(csk_details)
+dc_batsmen <- getBatsmen(dc_details)
+dd_batsmen <- getBatsmen(dd_details)
+kxip_batsmen <- getBatsmen(kxip_details)
+ktk_batsmen <- getBatsmen(ktk_details)
+kkr_batsmen <- getBatsmen(kkr_details)
+mi_batsmen <- getBatsmen(mi_details)
+pw_batsmen <- getBatsmen(pw_details)
+rr_batsmen <- getBatsmen(rr_details)
+rcb_batsmen <- getBatsmen(rcb_details)
+sh_batsmen <- getBatsmen(sh_details)
+gl_batsmen <- getBatsmen(gl_details)
+rps_batsmen <- getBatsmen(rps_details)
 
-# Get Deccan chargers batsmen
-batsmen <- dc_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-dc_batsmen <- sort(batsmen)
 
-# Get Delhi Daredevils batsmen
-batsmen <- dd_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-dd_batsmen <- sort(batsmen)
 
-# Get KCIP batsmen
-batsmen <- kxip_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-kxip_batsmen <- sort(batsmen)
-
-# Get KTK batsmen
-batsmen <- ktk_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-ktk_batsmen <- sort(batsmen)
-
-# Get KKR batsmen
-batsmen <- kkr_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-kkr_batsmen <- sort(batsmen)
-
-# Get MI batsmen
-batsmen <- mi_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-mi_batsmen <- sort(batsmen)
-
-# Get PW batsmen
-batsmen <- pw_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-pw_batsmen <- sort(batsmen)
-
-# Get RR batsmen
-batsmen <- rr_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-rr_batsmen <- sort(batsmen)
-
-# Get RCB batsmen
-batsmen <- rcb_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-rcb_batsmen <- sort(batsmen)
-
-# Get SH batsmen
-batsmen <- sh_details %>% distinct(batsman) 
-batsmen <- as.character(batsmen$batsman)
-sh_batsmen <- sort(batsmen)

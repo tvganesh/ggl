@@ -14,6 +14,7 @@ library(yorkr)
 # Source files
 
 source("definitions.R")
+source("funcs.R")
 
 
 
@@ -22,20 +23,7 @@ shinyServer(function(input, output,session) {
     # Analyze and display batsmen plots
     output$batsmanPlot <- renderPlot({  
         # Return if matchType is null
-        if (is.null(input$matchType))
-            return()
-
-        # Setup dynamic UI
-        if(input$matchType == "Test"){
-            player = testBatsman
-            f = funcs
-        } else if(input$matchType == "ODI"){
-            player = odiBatsman
-            f = funcsODITT
-        }
-        else {
-            player = ttBatsman
-            f = funcsODITT
+        
         }
         # Dynamic list update. Set the selected so that it does not flip to the first!!
         output$batsmanList = renderUI({
@@ -47,7 +35,7 @@ shinyServer(function(input, output,session) {
         })
         
         # Call the plots for the batsman
-        analyzeBatsman(input$batsman,input$batsmanFunc,input$matchType)
+        analyzeBatsman(input$batsman,input$batsmanFunc)
         
     })
     

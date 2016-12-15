@@ -21,8 +21,6 @@ batsmenFuncs <- c("batsmanRunsVsDeliveries",
 
 
 
-               
-
 # Function names for Test bowler analysis
 bowlersFuncs <- c("bowlerMeanEconomyRate",
             "bowlerMeanRunsConceded",
@@ -36,10 +34,5 @@ bowlersFuncs <- c("bowlerMeanEconomyRate",
 
 
             
-
-
-# Names of batsmen
-load("batsmen.RData")
-
 
 
