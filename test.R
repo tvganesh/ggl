@@ -1,4 +1,4 @@
-setwd("C:/software/cricket-package/cricsheet/ipl2016/details")
+setwd("C:/software/cricket-package/cricsheet/googly/data")
 load("Chennai Super Kings-BattingDetails.RData")
 csk_details <- battingDetails
 load("Deccan Chargers-BattingDetails.RData")
@@ -47,3 +47,60 @@ a$batsman = as.character(a$batsman)
 b <- a[order(a$batsman),]
 save(b, file="batsmen.RData")
 load("batsmen.RData")
+
+# Get individual teams batsmen data
+
+# Get CSK batsmen
+batsmen <- csk_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+csk_batsmen <- sort(batsmen)
+
+# Get Deccan chargers batsmen
+batsmen <- dc_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+dc_batsmen <- sort(batsmen)
+
+# Get Delhi Daredevils batsmen
+batsmen <- dd_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+dd_batsmen <- sort(batsmen)
+
+# Get KCIP batsmen
+batsmen <- kxip_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+kxip_batsmen <- sort(batsmen)
+
+# Get KTK batsmen
+batsmen <- ktk_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+ktk_batsmen <- sort(batsmen)
+
+# Get KKR batsmen
+batsmen <- kkr_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+kkr_batsmen <- sort(batsmen)
+
+# Get MI batsmen
+batsmen <- mi_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+mi_batsmen <- sort(batsmen)
+
+# Get PW batsmen
+batsmen <- pw_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+pw_batsmen <- sort(batsmen)
+
+# Get RR batsmen
+batsmen <- rr_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+rr_batsmen <- sort(batsmen)
+
+# Get RCB batsmen
+batsmen <- rcb_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+rcb_batsmen <- sort(batsmen)
+
+# Get SH batsmen
+batsmen <- sh_details %>% distinct(batsman) 
+batsmen <- as.character(batsmen$batsman)
+sh_batsmen <- sort(batsmen)
