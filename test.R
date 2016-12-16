@@ -47,9 +47,10 @@ a$batsman = as.character(a$batsman)
 b <- a[order(a$batsman),]
 save(b, file="batsmen.RData")
 load("batsmen.RData")
-
+IPLBatsmen <-b
 # Get individual teams batsmen data
 
+source("getBatsmen.R")
 # Get CSK batsmen
 csk_batsmen <- getBatsmen(csk_details)
 dc_batsmen <- getBatsmen(dc_details)
@@ -66,4 +67,27 @@ gl_batsmen <- getBatsmen(gl_details)
 rps_batsmen <- getBatsmen(rps_details)
 
 
+#Save the details
+save(csk_batsmen,file="csk.RData")
+save(dc_batsmen, file="dc.RData")
+save(dd_batsmen, file="dd.RData")
+save(kxip_batsmen, file="kxip.RData")
+save(ktk_batsmen, file="ktk.RData")
+save(kkr_batsmen, file="kkr.RData")
+save(mi_batsmen , file="mi.RData")
+save(pw_batsmen, file="pw.RData")
+save(rr_batsmen, file="rr.RData")
+save(rcb_batsmen, file="rcb.RData")
+save(sh_batsmen, file="sh.RData")
+save(gl_batsmen, file="gl.RData")
+save(rps_batsmen, file="rps.RData")
 
+teams = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
+             pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
+
+for (i in 1:length(teams)){
+    a <- which(teams[[i]] == "HH Gibbs")
+    a
+    break
+    
+}

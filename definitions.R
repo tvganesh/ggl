@@ -8,21 +8,21 @@
 #
 #########################################################################################################
 # Function names for Test  batsman analysis
-batsmenFuncs <- c("batsmanRunsVsDeliveries",
-           "batsmanFoursSixes",
-           "batsmanDismissals",
-           "batsmanRunsVsStrikeRate",
-           "batsmanMovingAverage",
-           "batsmanCumulativeAverageRuns",
-           "batsmanCumulativeStrikeRate",
-           "batsmanRunsAgainstOpposition",
-           "batsmanRunsVenue",
-           "batsmanRunsPredict")
+IPLBatsmenFuncs <- c("batsmanRunsVsDeliveries",
+                       "batsmanFoursSixes",
+                       "batsmanDismissals",
+                       "batsmanRunsVsStrikeRate",
+                       "batsmanMovingAverage",
+                       "batsmanCumulativeAverageRuns",
+                       "batsmanCumulativeStrikeRate",
+                       "batsmanRunsAgainstOpposition",
+                       "batsmanRunsVenue",
+                       "batsmanRunsPredict")
 
 
 
 # Function names for Test bowler analysis
-bowlersFuncs <- c("bowlerMeanEconomyRate",
+IPLBowlersFuncs <- c("bowlerMeanEconomyRate",
             "bowlerMeanRunsConceded",
             "bowlerMovingAverage",
             "bowlerCumulativeAvgWickets",

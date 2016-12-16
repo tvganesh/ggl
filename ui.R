@@ -15,12 +15,7 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
   
                             fluidRow(
                                 column(3,
-                                       radioButtons("matchType", label = h3("Match type"),
-                                                    choices = list("Test" = "Test",
-                                                                   "ODI" = "ODI", 
-                                                                   "Twenty20" = "TT"), 
-                                                    inline=TRUE,
-                                                    selected = "Test"),
+                                     
                                        uiOutput("batsmanList"),
                                        uiOutput("batsmanFunctionList") 
                                       
@@ -38,128 +33,7 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                                 )
                             )
                    ),
-                   # Bowlers tab
-                  tabPanel("Analyze bowlers",
-                            # Application title
-                            titlePanel("Analyze bowlers"),
-                            
-                            fluidRow(
-                                column(3,
-                                       radioButtons("matchType1", label = h3("Match type"),
-                                                    choices = list("Test" = "Test",
-                                                                   "ODI" = "ODI", 
-                                                                   "Twenty20" = "TT"), 
-                                                    inline=TRUE,
-                                                    selected = "Test"),
-                                       uiOutput("bowlerList"),
-                                       uiOutput("bowlerFunctionList") 
-                                ),
-                                
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("bowlerPlot")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
-                           
-                   ),
-                  #Relative batsmen plot
-                  tabPanel("Relative performance batsman",
-                           # Application title
-                           titlePanel("Relative performance batsman"),
-                           
-                           fluidRow(
-                               column(3,
-                                      radioButtons("matchType3", label = h3("Match type"),
-                                                   choices = list("Test" = "Test",
-                                                                  "ODI" = "ODI", 
-                                                                  "Twenty20" = "TT"), 
-                                                   inline=TRUE,
-                                                   selected = "Test"),
-                                      uiOutput("relBatsmen"),
-                                      uiOutput("relBatsmenFunction") 
-                               ),
-                               
-                               # Show a plot of the generated distribution        
-                               column(6,
-                                      plotOutput("relBatsmenPlot")
-                               ),
-                               column(7, offset=4,
-                                      tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                      tags$h5((tags$i("Nov 28,2015"))),
-                                      tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                               )
-                           )    
-                           
-                  ),
-                  tabPanel("Relative performance of bowlers",
-                           # Application title
-                           titlePanel("Relative performance of bowlers"),
-                           
-                           fluidRow(
-                               column(3,
-                                      radioButtons("matchType4", label = h3("Match type"),
-                                                   choices = list("Test" = "Test",
-                                                                  "ODI" = "ODI", 
-                                                                  "Twenty20" = "TT"), 
-                                                   inline=TRUE,
-                                                   selected = "Test"),
-                                      uiOutput("relBowlers"),
-                                      uiOutput("relBowlersFunction") 
-                               ),
-                               
-                               # Show a plot of the generated distribution        
-                               column(6,
-                                      plotOutput("relBowlersPlot")
-                               ),
-                               column(7, offset=4,
-                                      tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                      tags$h5((tags$i("Nov 28,2015"))),
-                                      tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                               )
-                           )    
-                           
-                  ),
-                  # Tab for In-Form status for both batsman & bowler
-                  tabPanel("In-form status",
-                           
-                           titlePanel("In form status"),
-                           
-                           fluidRow(
-                               column(3,
-                                      radioButtons("matchType5", label = h3("Match type"),
-                                                   choices = list("Test" = "Test",
-                                                                  "ODI" = "ODI", 
-                                                                  "Twenty20" = "TT"), 
-                                                   inline=TRUE,
-                                                   selected = "Test"),
-                                      radioButtons("playerType", label = h3("PlayerType"),
-                                                   choices = list("Batsman" = "Batsman",
-                                                                  
-                                                                  "Bowler" = "Bowler"), 
-                                                   inline=TRUE,
-                                                   selected = "Batsman"),
-                                      uiOutput("playerList")
-                                      
-                               ),
-                               
-                               # Show a plot of the generated distribution        
-                               column(6,
-                                      verbatimTextOutput("status")
-                                      #plotOutput("relBowlersPlot")
-                               ),
-                               column(7, offset=4,
-                                      tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                      tags$h5((tags$i("Nov 28,2015"))),
-                                      tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                               )
-                           )    
-                           
-                  ),
+                  
                
                    tabPanel("About",
                   h2("Sixer - cricketr's Shiny avatar"),
