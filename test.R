@@ -82,12 +82,17 @@ save(sh_batsmen, file="sh.RData")
 save(gl_batsmen, file="gl.RData")
 save(rps_batsmen, file="rps.RData")
 
+load("c")
+
 teams = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
              pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
-
+b <- NULL
 for (i in 1:length(teams)){
-    a <- which(teams[[i]] == "HH Gibbs")
-    a
-    break
+    a <- which(teams[[i]] == batsman)
+    
+    if(length(a) != 0)
+         b <- c(b,i)
+    
     
 }
+b
