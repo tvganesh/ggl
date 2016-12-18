@@ -11,12 +11,11 @@ find1 <- function(x, a){
 
 getTeamIndex <- function(batsman){
     b <- NULL
-    for (i in 1:length(teams)){
-        a <- which(teams[[i]] == batsman)
+    for (i in 1:length(teams_batsmen)){
+        a <- which(teams_batsmen[[i]] == batsman)
         
         if(length(a) != 0)
             b <- c(b,i)
-        
         
     }
     b
@@ -51,5 +50,30 @@ loadIPLBatsmen <- function(){
     load("rps.RData")
     setwd("..")
     
+}
+
+loadIPLBowlers <- function(){
+    setwd("./data")
+    load("csk1.RData")
+    load("dc1.RData")
+    load("dd1.RData")
+    load("kxip1.RData")
+    load("ktk1.RData")
+    load("kkr1.RData")
+    load("mi1.RData")
+    load("pw1.RData")
+    load("rr1.RData")
+    load("rcb1.RData")
+    load("sh1.RData")
+    load("gl1.RData")
+    load("rps1.RData")
+    setwd("..")
+    
+}
+
+getBowlers <- function(df){
+    bwlr <- df %>% distinct(bowler) 
+    bwlr <- as.character(bwlr$bowler)
+    bowler <- sort(bwlr)
 }
     

@@ -32,10 +32,14 @@ IPLBowlersFuncs <- c("bowlerMeanEconomyRate",
             "bowlerWicketsVenue",
             "bowlerWktsPredict")
 
-teams = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
+teams_batsmen = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
              pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
 
+teams_batsmen = list(csk_bowlers,dc_bowlers,dd_bowlers,kxip_bowlers,ktk_bowlers,kkr_bowlers,mi_bowlers,
+                     pw_bowlers,rr_bowlers,rcb_bowlers,sh_bowlers,gl_bowlers,rps_bowlers)
 
+teams_batsmen = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
+                     pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
 IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils","Kings Xi Punjab", 
                   "Kochi Tuskers","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",
                   "Rajasthan Royals","Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",

@@ -1,22 +1,22 @@
 #########################################################################################################
 #
-# Title : Sixer - cricketr's Shiny avatar
+# Title : 
 # Designed and developed by: Tinniam V Ganesh
 # Date : 28 Nov 2015
-# File: analyzeIPLBatsman.R
+# File: analyzeIPLBowlers.R
 # More details: https://gigadom.wordpress.com/
 #
 #########################################################################################################
 
-analyzeIPLBatsmen <- function(IPLBatsman,func) {
-    print(IPLBatsman)
-    loadIPLBatsmen()
+analyzeIPLBowlers <- function(IPLBowler,func) {
+    print(IPLBowler)
+    loadIPLBowlers()
     # Return when name is NULL at start
-    if(is.null(IPLBatsman))
+    if(is.null(IPLBowler))
         return()
     
     # Check and get the team indices of IPL teams in which the batsman has played
-    i <- getTeamIndex(IPLBatsman)
+    i <- getTeamIndex(IPLBowler)
     
     # Get the team names
     teamNames <- getTeams(i)
