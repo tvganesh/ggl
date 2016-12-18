@@ -9,6 +9,8 @@
 #########################################################################################################
 library(shiny)
 library(yorkr)
+library(rpart)
+library(rpart.plot)
 
 
 # Source files
@@ -29,12 +31,16 @@ shinyServer(function(input, output,session) {
         IPLBatsmen <-b
         # Dynamic list update. Set the selected so that it does not flip to the first!!
         output$batsmanList = renderUI({
-            selectInput('batsman', 'Choose batsman',choices=IPLBatsmen,selected=input$batsman)
+            output$batsmanFunctionList = renderUI({
+                #selectInput('batsmanFunc', 'Choose chart type',choices=IPLBatsmenFuncs,selected=input$batsmanFunc,
+                # selectize=FALSE, size=12)
+                selectInput('batsmanFunc', 'Choose function',choices=IPLBatsmenFuncs,selected=input$batsmanFunc)
+            })
+            #selectInput('batsman', 'Choose batsman',choices=IPLBatsmen,selected=input$batsman)
+            selectInput('batsman', 'Choose chart type',choices=IPLBatsmen,selected=input$batsman,
+             selectize=FALSE, size=20)
         })
-        output$batsmanFunctionList = renderUI({
-            selectInput('batsmanFunc', 'Choose chart type',choices=IPLBatsmenFuncs,selected=input$batsmanFunc,
-                        selectize=FALSE, size=12)
-        })
+
         
         
         print(input$batsmanFunc)

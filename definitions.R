@@ -36,9 +36,9 @@ teams = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_bats
              pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
 
 
-IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils"," Kings Xi Punjab", 
+IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils","Kings Xi Punjab", 
                   "Kochi Tuskers","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",
-                  " Rajasthan Royals","Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+                  "Rajasthan Royals","Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
                   "Rising Pune Supergiants")           
 
 
