@@ -23,8 +23,9 @@ shinyServer(function(input, output,session) {
    
     # Analyze and display batsmen plots
     output$batsmanPlot <- renderPlot({  
-       
-        load("batsmen.RData")
+        getwd()
+        #setwd("C:/software/cricket-package/cricsheet/googly")
+        load("./batsmen.RData")
         IPLBatsmen <-b
         # Dynamic list update. Set the selected so that it does not flip to the first!!
         output$batsmanList = renderUI({
@@ -35,8 +36,10 @@ shinyServer(function(input, output,session) {
                         selectize=FALSE, size=12)
         })
         
+        
+        print(input$batsmanFunc)
         # Call the plots for the batsman
-        #analyzeIPLBatsmen(input$batsman,input$IPLBatsmenFuncs,input$matchType)
+        analyzeIPLBatsmen(input$batsman,input$batsmanFunc)
         
     })
     

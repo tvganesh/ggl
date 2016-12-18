@@ -82,17 +82,48 @@ save(sh_batsmen, file="sh.RData")
 save(gl_batsmen, file="gl.RData")
 save(rps_batsmen, file="rps.RData")
 
-load("c")
+
+
+load("csk.RData")
+load("dc.RData")
+load("dd.RData")
+load("kxip.RData")
+load("ktk.RData")
+load("kkr.RData")
+load("mi.RData")
+load("pw.RData")
+load("rr.RData")
+load("rcb.RData")
+load("sh.RData")
+load("gl.RData")
+load("rps.RData")
+
+
 
 teams = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
-             pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
+             
+                              pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
 b <- NULL
 for (i in 1:length(teams)){
     a <- which(teams[[i]] == batsman)
     
-    if(length(a) != 0)
+    if(length(a) != 0){
+         
          b <- c(b,i)
     
-    
+    }
 }
 b
+
+m <- getTeamIndex(batsman)
+ipl_teams <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils"," Kings Xi Punjab", 
+              "Kochi Tuskers","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",
+              " Rajasthan Royals","Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
+                 "Rising Pune Supergiants")
+l <- NULL
+for (i in seq_along(m)){
+   
+   l <- c(l, ipl_teams[[m[i]]]) 
+   l 
+}
+
