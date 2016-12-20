@@ -76,4 +76,15 @@ getBowlers <- function(df){
     bwlr <- as.character(bwlr$bowler)
     bowler <- sort(bwlr)
 }
+
+getTeamIndex_bwlr <- function(bowler){
+    b <- NULL
+    for (i in 1:length(teams_bowlers)){
+        a <- which(teams_bowlers[[i]] == bowler)
+        if(length(a) != 0){
+            b <- c(b,i)
+        }
+    }
+    b
+}
     

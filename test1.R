@@ -82,3 +82,28 @@ save(rcb_bowlers, file="rcb1.RData")
 save(sh_bowlers, file="sh1.RData")
 save(gl_bowlers, file="gl1.RData")
 save(rps_bowlers, file="rps1.RData")
+
+load("csk1.RData")
+load("dc1.RData")
+load("dd1.RData")
+load("kxip1.RData")
+load("ktk1.RData")
+load("kkr1.RData")
+load("mi1.RData")
+load("pw1.RData")
+load("rr1.RData")
+load("rcb1.RData")
+load("sh1.RData")
+load("gl1.RData")
+load("rps1.RData")
+
+teams_bowlers = list(csk_bowlers,dc_bowlers,dd_bowlers,kxip_bowlers,ktk_bowlers,kkr_bowlers,mi_bowlers,
+             pw_bowlers,rr_bowlers,rcb_bowlers,sh_bowlers,gl_bowlers,rps_bowlers)
+b <- NULL
+for (i in 1:length(teams_bowlers)){
+    a <- which(teams_bowlers[[i]] == bowler)
+    if(length(a) != 0){
+        b <- c(b,i)
+    }
+}
+b
