@@ -64,14 +64,15 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             
                             fluidRow(
                                 column(3,
-                                       uiOutput("matchFunctionList"), 
-                                       uiOutput("matchList")
+                                       uiOutput("IPLMatchFunctionList"), 
+                                       uiOutput("matchList"),
+                                       uiOutput("IPLTeam")
                                        
                                 ),
                                 
                                 # Show a plot of the generated distribution        
                                 column(6,
-                                       plotOutput("matchPlot")
+                                       plotOutput("IPLMatchPlot")
                                 ),
                                 column(7, offset=4,
                                        tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),

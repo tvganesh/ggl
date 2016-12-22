@@ -21,6 +21,7 @@ source("definitions.R")
 source("funcs.R")
 source("analyzeIPLBatsmen.R")
 source("analyzeIPLBowlers.R")
+source("analyzeIPLMatches.R")
 shinyServer(function(input, output,session) {
  
     # Analyze and display batsmen plots
@@ -74,11 +75,21 @@ shinyServer(function(input, output,session) {
             selectInput('Func', 'Choose function',choices=IPLMatchFuncs,selected=input$matchFunc)
         })
         output$matchList = renderUI({
-            selectInput('match', 'Choose chart type',choices=IPLmatches,selected=input$match,
+            selectInput('match', 'Choose chart type',choices=IPLMatches,selected=input$match,
                         selectize=FALSE, size=20)
         })
+        i
+        class(input$match)
+        m <- strsplit(as.character(input$match),"-")
+        print(m[[1]][1])
+        print(m[[1]][2])
+        print(input$matchFunc)
+        teams <- c(m[[1]][1],m[[1]][2])
+        output$IPLTeam = renderUI({
+            selectInput('IPLteams', 'Choose team',choices=teams,selected=input$team)
+        })
         
-        analyzeIPLMatches(input$match,input$matchFunc)
+        analyzeIPLMatches(input$match,input$matchFunc,input$team)
         
         
     })
