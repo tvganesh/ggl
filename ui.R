@@ -40,7 +40,6 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             
                             fluidRow(
                                 column(3,
-                                       
                                        uiOutput("bowlerFunctionList"), 
                                        uiOutput("bowlerList")
                                        

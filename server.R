@@ -33,11 +33,8 @@ shinyServer(function(input, output,session) {
         # Dynamic list update. Set the selected so that it does not flip to the first!!
         output$batsmanList = renderUI({
             output$batsmanFunctionList = renderUI({
-                #selectInput('batsmanFunc', 'Choose chart type',choices=IPLBatsmenFuncs,selected=input$batsmanFunc,
-                # selectize=FALSE, size=12)
                 selectInput('batsmanFunc', 'Choose function',choices=IPLBatsmanFuncs,selected=input$batsmanFunc)
             })
-            
             selectInput('batsman', 'Choose chart type',choices=IPLBatsmen,selected=input$batsman,
              selectize=FALSE, size=20)
         })
@@ -54,12 +51,12 @@ shinyServer(function(input, output,session) {
         IPLBowlers <-b
         
         # Render dynamic UI
-        output$bowlerList = renderUI({
-            selectInput('bowlerFunc', 'Choose function',choices=IPLBowlerFuncs,selected=input$BowlerFunc)
-        })
         output$bowlerFunctionList = renderUI({
+            selectInput('bowlerFunc', 'Choose function',choices=IPLBowlerFuncs,selected=input$bowlerFunc)
+        })
+        output$bowlerList = renderUI({
             selectInput('bowler', 'Choose chart type',choices=IPLBowlers,selected=input$bowler,
-                        selectize=FALSE, size=8)
+                        selectize=FALSE, size=20)
         })
         
         analyzeIPLBowlers(input$bowler,input$bowlerFunc)
