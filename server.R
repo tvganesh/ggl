@@ -72,24 +72,29 @@ shinyServer(function(input, output,session) {
         IPLMatches <- gsub(".RData","",a)
         # Render dynamic UI
         output$IPLMatchFunctionList = renderUI({
-            selectInput('Func', 'Choose function',choices=IPLMatchFuncs,selected=input$matchFunc)
+            selectInput('matchFunc', 'Choose function',choices=IPLMatchFuncs,selected=input$matchFunc)
         })
         output$matchList = renderUI({
             selectInput('match', 'Choose chart type',choices=IPLMatches,selected=input$match,
                         selectize=FALSE, size=20)
+                        
         })
-        i
-        class(input$match)
+        
+        print(input$match)
         m <- strsplit(as.character(input$match),"-")
         print(m[[1]][1])
         print(m[[1]][2])
         print(input$matchFunc)
         teams <- c(m[[1]][1],m[[1]][2])
         output$IPLTeam = renderUI({
-            selectInput('IPLteams', 'Choose team',choices=teams,selected=input$team)
+            selectInput('team', 'Choose team',choices=teams,selected=input$team)
         })
+        print(input$team)
         
-        analyzeIPLMatches(input$match,input$matchFunc,input$team)
+        # Take the set difference  to get the opposition
+        otherTeam = setdiff(teams,input$team)
+        print(otherTeam)
+        analyzeIPLMatches(input$match,input$matchFunc,input$team,otherTeam)
         
         
     })

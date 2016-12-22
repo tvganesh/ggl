@@ -8,33 +8,35 @@
 #
 #########################################################################################################
 
-analyzeIPLMatches <- function(match,matchFunc,team) {
+analyzeIPLMatches <- function(match,matchFunc,team,opposition) {
 
     # Check and get the team indices of IPL teams in which the bowler has played
     IPLmatch <- paste("./IPLmatches/", match,".RData",sep="")
-    IPLmatch <- load(IPLmatch)
-    print(IPLmatch)
+    load(IPLmatch)
+    matchDF <- overs
     
-
+    print(matchFunc)
+    print(dim(matchDF))
+    print(team)
     
     if(matchFunc == "Match Batting Scorecard"){
-        teamBattingScorecardMatch(match,IPLBowler,team)
+        teamBattingScorecardMatch(matchDF,team)
     } else if (matchFunc == "Batting Partnerships"){
-        teamBatsmenPartnershipMatch(bowlerDF,IPLBowler)
+        teamBatsmenPartnershipMatch(matchDF,team,opposition)
     } else if (matchFunc == "Batsmen vs Bowlers"){
-        teamBatsmenVsBowlersMatch(bowlerDF,IPLBowler)
+        teamBatsmenVsBowlersMatch(matchDF,team,opposition)
     }  else if (matchFunc == "Bowling Scorecard"){
-        teamBowlingScorecardMatch(bowlerDF,IPLBowler)    
+        teamBowlingScorecardMatch(matchDF,team)    
     } else if (matchFunc == "Bowling Wicket Kind"){
-        teamBowlingWicketKindMatch(bowlerDF,IPLBowler)
+        teamBowlingWicketKindMatch(matchDF,team,opposition)
     } else if (matchFunc == "Bowling Wicket Runs"){
-        teamBowlingWicketRunsMatch(bowlerDF,IPLBowler)
+        teamBowlingWicketRunsMatch(matchDF,team,opposition)
     } else if (matchFunc == "Bowling Wicket Match"){
-        teamBowlingWicketMatch(bowlerDF,IPLBowler)
+        teamBowlingWicketMatch(matchDF,team,opposition)
     } else if (matchFunc == "Bowler vs Batsmen"){
-        teamBowlersVsBatsmenMatch(bowlerDF,IPLBowler)
+        teamBowlersVsBatsmenMatch(matchDF,team,opposition)
     } else if (matchFunc == "Match Worm Graph"){
-        matchWormGraph(bowlerDF,IPLBowler)
+        matchWormGraph(matchDF,team,opposition)
     }
     
     
