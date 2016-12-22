@@ -33,6 +33,18 @@ IPLBowlerFuncs <- c("Mean Economy Rate of bowler",
                      "Bowler's wickets prediction")
 
 
+# Functions to analyze IPL matches
+IPLMatchFuncs <- c("Match Batting Scorecard",
+                   "Batting Partnerships",
+                   "Batsmen vs Bowlers",
+                   'Bowling Scorecard',
+                   "Bowling Wicket Kind",
+                   "Bowling Wicket Runs",
+                   "Bowling Wicket Match",
+                   "Bowler vs Batsmen",
+                   "Match Worm Graph")
+
+
 
 
 IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils","Kings Xi Punjab", 

@@ -57,7 +57,30 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             )    
                             
                    ),
-                  
+                   # Analyze IPL matches
+                   tabPanel("Analyze IPL matches",
+                            # Application title
+                            titlePanel("Analyze IPL matches"),
+                            
+                            fluidRow(
+                                column(3,
+                                       uiOutput("matchFunctionList"), 
+                                       uiOutput("matchList")
+                                       
+                                ),
+                                
+                                # Show a plot of the generated distribution        
+                                column(6,
+                                       plotOutput("matchPlot")
+                                ),
+                                column(7, offset=4,
+                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
+                                       tags$h5((tags$i("Nov 28,2015"))),
+                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
+                                )
+                            )    
+                            
+                   ),
                
                    tabPanel("About",
                   h2("Sixer - cricketr's Shiny avatar"),

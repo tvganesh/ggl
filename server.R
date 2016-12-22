@@ -64,5 +64,24 @@ shinyServer(function(input, output,session) {
         
     })
     
+    # Analyze and display IPL matches
+    output$IPLMatchPlot <- renderPlot({  
+        
+        a <-list.files("IPLmatches/")
+        IPLMatches <- gsub(".RData","",a)
+        # Render dynamic UI
+        output$IPLMatchFunctionList = renderUI({
+            selectInput('Func', 'Choose function',choices=IPLMatchFuncs,selected=input$matchFunc)
+        })
+        output$matchList = renderUI({
+            selectInput('match', 'Choose chart type',choices=IPLmatches,selected=input$match,
+                        selectize=FALSE, size=20)
+        })
+        
+        analyzeIPLMatches(input$match,input$matchFunc)
+        
+        
+    })
+    
     
 })
