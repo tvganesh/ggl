@@ -9,58 +9,48 @@
 #########################################################################################################
 
 analyzeIPLBowlers <- function(IPLBowler,func) {
-    print(IPLBowler)
-    loadIPLBowlers()
-    # Return when name is NULL at start
-    if(is.null(IPLBowler))
-        return()
     
-    # Check and get the team indices of IPL teams in which the batsman has played
-    i <- getTeamIndex(IPLBowler)
+    
+    
+    
+    
+    # Check and get the team indices of IPL teams in which the bowler has played
+    i <- getTeamIndex_bowler(IPLBowler)
     
     # Get the team names
     teamNames <- getTeams(i)
     # Check if file exists in the directory. This check is necessary when moving between matchType
     
-    batsmanDF <- NULL
+    bowlerDF <- NULL
     # Create a consolidated Data frame of batsman for all IPL teams played
     for (i in seq_along(teamNames)){
-          df <- getBatsmanDetails(team=teamNames[i],name=IPLBatsman,dir="./data")
-          batsmanDF <- rbind(batsmanDF,df) 
+          df <- getBowlerWicketDetails(team=teamNames[i],name=IPLBowler,dir="./data")
+          bowlerDF <- rbind(bowlerDF,df) 
     }
  
-    if(func == "Batsman Runs vs. Deliveries"){
-        batsmanRunsVsDeliveries(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Fours & Sixes"){
-        batsmanRunsPredict(batsmanDF,IPLBatsman)
-    }     else if (func == "Dismissals of batsman"){
-        batsmanDismissals(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Runs vs StrikeRate"){
-        batsmanRunsVsStrikeRate(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Moving Average"){
-        batsmanMovingAverage(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Cumulative Average Runs"){
-        batsmanCumulativeAverageRuns(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Cumulative Strike Rate"){
-        batsmanCumulativeStrikeRate(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's Runs against Opposition"){
-        batsmanRunsAgainstOpposition(batsmanDF,IPLBatsman)
-    } else if (func == "Batsman's  Runs at Venue"){
-        batsmanRunsVenue(batsmanDF,IPLBatsman)
-    } else if (func == "Predict Runs of batsman"){
-        batsmanRunsPredict(batsmanDF,IPLBatsman)
-    } 
+    if(func == "Mean Economy Rate of bowler"){
+        bowlerMeanEconomyRate(bowlerDF,IPLBowler)
+    } else if (func == "Mean runs conceded by bowler"){
+        bowlerMeanRunsConceded(bowlerDF,IPLBowler)
+    }     else if (func == "Bowler's Moving Average"){
+        bowlerMovingAverage(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's Cumulative Avg. Wickets"){
+        bowlerCumulativeAvgWickets(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's Cumulative Avg. Econonmy Rate"){
+        bowlerCumulativeAvgEconRate(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's Wicket Plot"){
+        bowlerWicketPlot(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's Wickets against opposition"){
+        bowlerWicketsAgainstOpposition(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's Wickets ar Venues"){
+        bowlerWicketsVenue(bowlerDF,IPLBowler)
+    } else if (func == "Bowler's wickets prediction"){
+        bowlerWktsPredict(bowlerDF,IPLBowler)
+    }
     
     
     
     
-    # Call necessary function from cricketr package
-    #if(func =="4s & 6s of batsman"){
-     #   batsman4s6s(file,name)
-    #} else if (func == "4s of batsman"){
-       # batsman4s(file,name)
-    #} else if (func == "6s of batsman"){
-      #  batsman6s(file,name)
    
 }
 

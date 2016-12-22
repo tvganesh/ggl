@@ -33,6 +33,31 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                                 )
                             )
                    ),
+                   # Bowlers tab
+                   tabPanel("Analyze bowlers",
+                            # Application title
+                            titlePanel("Analyze bowlers"),
+                            
+                            fluidRow(
+                                column(3,
+                                       
+                                       uiOutput("bowlerFunctionList"), 
+                                       uiOutput("bowlerList")
+                                       
+                                ),
+                                
+                                # Show a plot of the generated distribution        
+                                column(6,
+                                       plotOutput("bowlerPlot")
+                                ),
+                                column(7, offset=4,
+                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
+                                       tags$h5((tags$i("Nov 28,2015"))),
+                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
+                                )
+                            )    
+                            
+                   ),
                   
                
                    tabPanel("About",

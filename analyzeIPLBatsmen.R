@@ -9,6 +9,9 @@
 #########################################################################################################
 
 analyzeIPLBatsmen <- function(IPLBatsman,func) {
+    
+   
+   
     print(IPLBatsman)
     loadIPLBatsmen()
     # Return when name is NULL at start
@@ -52,15 +55,6 @@ analyzeIPLBatsmen <- function(IPLBatsman,func) {
     } 
     
     
-    
-    
-    # Call necessary function from cricketr package
-    #if(func =="4s & 6s of batsman"){
-     #   batsman4s6s(file,name)
-    #} else if (func == "4s of batsman"){
-       # batsman4s(file,name)
-    #} else if (func == "6s of batsman"){
-      #  batsman6s(file,name)
    
 }
 

@@ -8,7 +8,7 @@
 #
 #########################################################################################################
 # Function names for Test  batsman analysis
-IPLBatsmenFuncs <- c("Batsman Runs vs. Deliveries",
+IPLBatsmanFuncs <- c("Batsman Runs vs. Deliveries",
                        "Batsman's Fours & Sixes",
                        "Dismissals of batsman",
                        "Batsman's Runs vs StrikeRate",
@@ -22,25 +22,21 @@ IPLBatsmenFuncs <- c("Batsman Runs vs. Deliveries",
 
 
 # Function names for Test bowler analysis
-IPLBowlersFuncs <- c("bowlerMeanEconomyRate",
-            "bowlerMeanRunsConceded",
-            "bowlerMovingAverage",
-            "bowlerCumulativeAvgWickets",
-            "bowlerCumulativeAvgEconRate",
-            "bowlerWicketPlot",
-            "bowlerWicketsAgainstOpposition",
-            "bowlerWicketsVenue",
-            "bowlerWktsPredict")
+IPLBowlerFuncs <- c("Mean Economy Rate of bowler",
+                     "Mean runs conceded by bowler",
+                     "Bowler's Moving Average",
+                     "Bowler's Cumulative Avg. Wickets",
+                     "Bowler's Cumulative Avg. Econonmy Rate",
+                     "Bowler's Wicket Plot",
+                     "Bowler's Wickets against opposition",
+                     "Bowler's Wickets ar Venues",
+                     "Bowler's wickets prediction")
 
-teams_batsmen = list(csk_batsmen,dc_batsmen,dd_batsmen,kxip_batsmen,ktk_batsmen,kkr_batsmen,mi_batsmen,
-             pw_batsmen,rr_batsmen,rcb_batsmen,sh_batsmen,gl_batsmen,rps_batsmen)
 
-teams_bowlers = list(csk_bowlers,dc_bowlers,dd_bowlers,kxip_bowlers,ktk_bowlers,kkr_bowlers,mi_bowlers,
-                     pw_bowlers,rr_bowlers,rcb_bowlers,sh_bowlers,gl_bowlers,rps_bowlers)
 
 
 IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils","Kings Xi Punjab", 
-                  "Kochi Tuskers","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",
+                  "Kochi Tuskers Kerala","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",
                   "Rajasthan Royals","Royal Challengers Bangalore","Sunrisers Hyderabad","Gujarat Lions",
                   "Rising Pune Supergiants")           
 
