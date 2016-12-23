@@ -45,7 +45,23 @@ IPLMatchFuncs <- c("Match Batting Scorecard",
                    "Match Worm Graph")
 
 
+# Functions to analyze IPL matches
+IPLMatches2TeamsFuncs <- c("Team Batting Scorecard All Matches",
+                   "Team Batsmen Batting Partnerships All Matches",
+                   "Team Batsmen vs Bowlers all Matches",
+                   'Team Bowling Performance All Matches',
+                   "Team Wickets Opposition All Matches",
+                   "Team Bowler vs Batsmen All Matches",
+                   "Team Bowlers Wicket Kind All Matches",
+                   "Team Bowler Wicket Runs All Matches",
+                   "Win Loss All Matches")
 
+# Functions to analyze IPL teams' overall performance
+IPLTeamOverallPerfFunc <- c("Team Batting Scorecard Overall",
+                           "Team Batsmen Partnerships Overall",
+                           "Team Batsmen vs Bowlers Overall",
+                           'Team Bowler vs Batsmen Overall',
+                           "Team Bowler Wicket Kind Overall")
 
 IPLTeamNames <- list("Chennai Super Kings","Deccan Chargers", "Delhi Daredevils","Kings Xi Punjab", 
                   "Kochi Tuskers Kerala","Kolkata Knight Riders","Mumbai Indians","Pune Warriors",

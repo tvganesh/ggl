@@ -52,44 +52,7 @@ getTeams <- function(x){
     l
 }
 
-loadIPLBatsmen <- function(){
-    setwd("./data")
-    load("csk.RData")
-    load("dc.RData")
-    load("dd.RData")
-    load("kxip.RData")
-    load("ktk.RData")
-    load("kkr.RData")
-    load("mi.RData")
-    load("pw.RData")
-    load("rr.RData")
-    load("rcb.RData")
-    load("sh.RData")
-    load("gl.RData")
-    load("rps.RData")
-   
-    setwd("..")
-    
-}
 
-loadIPLBowlers <- function(){
-    setwd("./data")
-    load("csk1.RData")
-    load("dc1.RData")
-    load("dd1.RData")
-    load("kxip1.RData")
-    load("ktk1.RData")
-    load("kkr1.RData")
-    load("mi1.RData")
-    load("pw1.RData")
-    load("rr1.RData")
-    load("rcb1.RData")
-    load("sh1.RData")
-    load("gl1.RData")
-    load("rps1.RData")
-    setwd("..")
-    
-}
 
 getBowlers <- function(df){
     bwlr <- df %>% distinct(bowler) 
