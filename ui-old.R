@@ -9,30 +9,21 @@
 #########################################################################################################
 source("data.R")
 
-source("data.R")
-
-shinyUI(navbarPage("Googly : yorkr analyzes IPL!",
+shinyUI(navbarPage("Googly: yorkr analyzes IPL!",
                    # Batsman tab
-                   
                    tabPanel("IPL batsman",
                             sidebarPanel(
-                                selectInput('batsmanFunc', 'Select function', IPLBatsmanFuncs),
-                                selectInput('batsman', 'Select batsman', IPLBatsmen,selectize=FALSE, size=20)
+                                selectInput('batsmanFunc', 'X Variable', IPLBatsmanFuncs),
+                                selectInput('batsman', 'Y Variable', IPLBatsmen,selectize=FALSE, size=20)
                                 
                                 
                             ),
                             mainPanel(
-                                plotOutput('batsmanPlot'),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Dec 24,2016"))),
-                                       tags$h6("Data source Cricsheet: http://cricsheet.org/")
-                                )
+                                plotOutput('batsmanPlot')
                             )
                             
-                            
+                               
                    ),
-                   # Bowlers tab
                    # Bowlers tab
                    tabPanel("IPL bowlers",
                             # Application title
@@ -45,14 +36,9 @@ shinyUI(navbarPage("Googly : yorkr analyzes IPL!",
                                 
                             ),
                             mainPanel(
-                                plotOutput('bowlerPlot'),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Dec 24,2016"))),
-                                       tags$h6("Data source Cricsheet: http://cricsheet.org/")
-                                )
+                                plotOutput('bowlerPlot')
                             )
-                            
+                                
                             
                    ),
                    # Analyze IPL matches
@@ -64,46 +50,38 @@ shinyUI(navbarPage("Googly : yorkr analyzes IPL!",
                                 selectInput('matchFunc', 'Select match function', IPLMatchFuncs),
                                 selectInput('match', 'Select IPL match ', IPLMatches,selectize=FALSE, size=20),
                                 uiOutput("selectTeam")
-                                
+                                #selectInput('team', 'X Variable', team)
                                 
                             ),
                             mainPanel(
-                                plotOutput('IPLMatchPlot'),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Dec 24,2016"))),
-                                       tags$h6("Data source Cricsheet: http://cricsheet.org/")
-                                )
+                                plotOutput('IPLMatchPlot')
                             )
                             
                    ),
-                   
+               
                    # Analyze 2 Teams IPL matches
-                   tabPanel("Head to head",
+                   tabPanel("Head-to-head",
+
                             
                             headerPanel('Head-to-head between 2 IPL teams'),
                             
                             sidebarPanel(
                                 selectInput('matches2TeamFunc', 'Select function', IPLMatches2TeamsFuncs),
                                 selectInput('matches', 'Select matches', IPLMatches2Teams,selectize=FALSE, size=20),
-                                uiOutput("selectTeam2")
+                                uiOutput("selectTeam")
                                 
                                 
                             ),
                             mainPanel(
-                                plotOutput('IPLMatch2TeamsPlot'),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Dec 24,2016"))),
-                                       tags$h6("Data source Cricsheet: http://cricsheet.org/")
-                                )
+                                plotOutput('IPLMatch2TeamsPlot')
                             ) 
                             
                    ),
                    
                    # Analyze IPL Team Overall Perf
                    tabPanel("Overall Performance",
-                            
+                            # Application title
+                            # Application title
                             headerPanel("Analyze IPL team's overall performance"),
                             
                             sidebarPanel(
@@ -114,26 +92,21 @@ shinyUI(navbarPage("Googly : yorkr analyzes IPL!",
                                 
                             ),
                             mainPanel(
-                                plotOutput('IPLTeamPerfOverall'),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Dec 24,2016"))),
-                                       tags$h6("Data source Cricsheet: http://cricsheet.org/")
-                                )
+                                plotOutput('IPLTeamPerfOverall')
                             ) 
-                            
+                  
                             
                    ),
                    tabPanel("About",
-                            h2("Sixer - cricketr's Shiny avatar"),
-                            p("This Shiny app is based on the R package 'cricketr'. In this Shiny app, I use  the
+                  h2("Sixer - cricketr's Shiny avatar"),
+                  p("This Shiny app is based on the R package 'cricketr'. In this Shiny app, I use  the
                     cricketr package to analyze the performances of cricketers. cricketr can analyze batsman
                     and bowlers in all formats of the game namely Test, ODI and Twenty20."),
-                            p("The R package 'cricketr' has been authored by Tinniam V Ganesh for analyzing  performances of cricketers
+                  p("The R package 'cricketr' has been authored by Tinniam V Ganesh for analyzing  performances of cricketers
                     based on ESPN Cricinfo's Statsguru"),
-                            p("This Shiny app 'Sixer' has been designed and developed by  Tinniam V Ganesh, Nov 2015"),
-                            p("The data for this Shiny app has been taken from ESPN Cricinfo - http://www.espncricinfo.com/ci/content/stats/index.html"),
-                            p("More details about this app and for other posts, see my blog
+                  p("This Shiny app 'Sixer' has been designed and developed by  Tinniam V Ganesh, Nov 2015"),
+                  p("The data for this Shiny app has been taken from ESPN Cricinfo - http://www.espncricinfo.com/ci/content/stats/index.html"),
+                  p("More details about this app and for other posts, see my blog
                     http://gigadom.wordpress.com/")
                    )
                    
