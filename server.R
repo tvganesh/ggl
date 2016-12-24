@@ -142,7 +142,7 @@ shinyServer(function(input, output,session) {
         })
         output$OverallMatchesList = renderUI({
             selectInput('teamMatches', 'Choose chart type',choices=IPLTeamsAll,selected=input$teamMatches,
-                        selectize=FALSE, size=15)
+                        selectize=FALSE, size=13)
             
         })
         
