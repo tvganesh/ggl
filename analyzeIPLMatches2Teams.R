@@ -1,6 +1,7 @@
 analyzeIPLMatches2Teams <- function(match,matchFunc,team,opposition) {
     
     # Check and get the team indices of IPL teams in which the bowler has played
+    getwd()
     IPLmatch <- paste("./IPLMatches2Teams/", match,".RData",sep="")
     load(IPLmatch)
     matchesDF <- matches
@@ -8,6 +9,7 @@ analyzeIPLMatches2Teams <- function(match,matchFunc,team,opposition) {
     print(matchFunc)
     print(dim(matchesDF))
     print(team)
+    print(opposition)
     
     if(matchFunc == "Team Batting Scorecard All Matches"){
         teamBattingScorecardOppnAllMatches(matchesDF,team)

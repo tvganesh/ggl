@@ -15,6 +15,10 @@ IPLBowlers <-b
 
 a <-list.files("IPLmatches/")
 IPLMatches <- gsub(".RData","",a)
+
+a <-list.files("IPLMatches2teams/")
+IPLMatches2Teams <- gsub(".RData","",a)
+
 shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Batsman tab
                    tabPanel("Analyze batsman",
@@ -70,26 +74,19 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Analyze 2 Teams IPL matches
                    tabPanel("2 teams",
                             # Application title
-                            titlePanel("2 teams IPL matches"),
+                            # Application title
+                            headerPanel('Iris k-means clustering'),
                             
-                            fluidRow(
-                                column(3,
-                                       uiOutput("IPLMatches2TeamsFunctionList"), 
-                                       uiOutput("AllMatchesList")
-                                       #uiOutput("IPLTeams")
-                                       
-                                ),
+                            sidebarPanel(
+                                selectInput('matches2TeamFunc', 'X Variable', IPLMatches2TeamsFuncs),
+                                selectInput('matches', 'Y Variable', IPLMatches2Teams,selectize=FALSE, size=20),
+                                uiOutput("selectTeam2")
                                 
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("IPLMatch2TeamsPlot")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
+                                
+                            ),
+                            mainPanel(
+                                plotOutput('IPLMatch2TeamsPlot')
+                            ) 
                             
                    ),
                    

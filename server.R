@@ -62,4 +62,27 @@ shinyServer(function(input, output,session) {
         analyzeIPLMatches(input$match,input$matchFunc,input$team,otherTeam)
         
     })
+    
+    output$IPLMatch2TeamsPlot <- renderPlot({  
+        m <- strsplit(as.character(input$matches),"-")
+        print(m[[1]][1])
+        print(m[[1]][2])
+        
+        teams <- c(m[[1]][1],m[[1]][2])
+        print(teams)
+        
+        # Load all IPL batsmen
+        output$selectTeam2 <- renderUI({ 
+            selectInput('team2', 'Choose team',choices=teams,selected=input$team2)
+        })
+        print(input$team2)
+        otherTeam = setdiff(teams,input$team2)
+        print(otherTeam)
+        print("Hello")
+        print(input$matches)
+        print(input$matches2TeamFunc)
+        print(input$team2)
+        analyzeIPLMatches2Teams(input$matches,input$matches2TeamFunc,input$team2,otherTeam)
+        
+    })
 })
