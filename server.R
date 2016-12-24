@@ -90,7 +90,7 @@ shinyServer(function(input, output,session) {
         rankValues <- c(1,2,3,4,5,6)
         
         output$Rank = renderUI({
-            selectInput('rank', 'Choose team',choices=rankValues,selected=input$rank)
+            selectInput('rank', 'Choose the rank',choices=rankValues,selected=input$rank)
         })
         
         print(input$teamMatches)

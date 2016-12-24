@@ -9,12 +9,12 @@
 #########################################################################################################
 source("data.R")
 
-shinyUI(navbarPage("cricketr analyzes Cricketers!",
+shinyUI(navbarPage("Googly: yorkr analyzes IPL!",
                    # Batsman tab
                    tabPanel("IPL batsman",
                             sidebarPanel(
-                                selectInput('batsmanFunc', 'Select function', IPLBatsmanFuncs),
-                                selectInput('batsman', 'Select batsman', IPLBatsmen,selectize=FALSE, size=20)
+                                selectInput('batsmanFunc', 'X Variable', IPLBatsmanFuncs),
+                                selectInput('batsman', 'Y Variable', IPLBatsmen,selectize=FALSE, size=20)
                                 
                                 
                             ),
@@ -22,9 +22,8 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                                 plotOutput('batsmanPlot')
                             )
                             
-                            
+                               
                    ),
-                   # Bowlers tab
                    # Bowlers tab
                    tabPanel("IPL bowlers",
                             # Application title
@@ -39,7 +38,7 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             mainPanel(
                                 plotOutput('bowlerPlot')
                             )
-                            
+                                
                             
                    ),
                    # Analyze IPL matches
@@ -51,7 +50,7 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                                 selectInput('matchFunc', 'Select match function', IPLMatchFuncs),
                                 selectInput('match', 'Select IPL match ', IPLMatches,selectize=FALSE, size=20),
                                 uiOutput("selectTeam")
-                                
+                                #selectInput('team', 'X Variable', team)
                                 
                             ),
                             mainPanel(
@@ -59,16 +58,17 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             )
                             
                    ),
-                   
+               
                    # Analyze 2 Teams IPL matches
-                   tabPanel("Head to head",
+                   tabPanel("Head-to-head",
+
                             
                             headerPanel('Head-to-head between 2 IPL teams'),
                             
                             sidebarPanel(
                                 selectInput('matches2TeamFunc', 'Select function', IPLMatches2TeamsFuncs),
                                 selectInput('matches', 'Select matches', IPLMatches2Teams,selectize=FALSE, size=20),
-                                uiOutput("selectTeam2")
+                                uiOutput("selectTeam")
                                 
                                 
                             ),
@@ -80,7 +80,8 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    
                    # Analyze IPL Team Overall Perf
                    tabPanel("Overall Performance",
-                           
+                            # Application title
+                            # Application title
                             headerPanel("Analyze IPL team's overall performance"),
                             
                             sidebarPanel(
@@ -93,19 +94,19 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             mainPanel(
                                 plotOutput('IPLTeamPerfOverall')
                             ) 
-                            
+                  
                             
                    ),
                    tabPanel("About",
-                            h2("Sixer - cricketr's Shiny avatar"),
-                            p("This Shiny app is based on the R package 'cricketr'. In this Shiny app, I use  the
+                  h2("Sixer - cricketr's Shiny avatar"),
+                  p("This Shiny app is based on the R package 'cricketr'. In this Shiny app, I use  the
                     cricketr package to analyze the performances of cricketers. cricketr can analyze batsman
                     and bowlers in all formats of the game namely Test, ODI and Twenty20."),
-                            p("The R package 'cricketr' has been authored by Tinniam V Ganesh for analyzing  performances of cricketers
+                  p("The R package 'cricketr' has been authored by Tinniam V Ganesh for analyzing  performances of cricketers
                     based on ESPN Cricinfo's Statsguru"),
-                            p("This Shiny app 'Sixer' has been designed and developed by  Tinniam V Ganesh, Nov 2015"),
-                            p("The data for this Shiny app has been taken from ESPN Cricinfo - http://www.espncricinfo.com/ci/content/stats/index.html"),
-                            p("More details about this app and for other posts, see my blog
+                  p("This Shiny app 'Sixer' has been designed and developed by  Tinniam V Ganesh, Nov 2015"),
+                  p("The data for this Shiny app has been taken from ESPN Cricinfo - http://www.espncricinfo.com/ci/content/stats/index.html"),
+                  p("More details about this app and for other posts, see my blog
                     http://gigadom.wordpress.com/")
                    )
                    
