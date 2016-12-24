@@ -9,6 +9,12 @@
 #########################################################################################################
 load("./batsmen.RData")
 IPLBatsmen <-b
+
+load("./bowler.RData")
+IPLBowlers <-b
+
+a <-list.files("IPLmatches/")
+IPLMatches <- gsub(".RData","",a)
 shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Batsman tab
                    tabPanel("Analyze batsman",
@@ -29,50 +35,35 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Bowlers tab
                    tabPanel("Analyze bowlers",
                             # Application title
-                            titlePanel("Analyze bowlers"),
+                            headerPanel('Iris k-means clustering'),
                             
-                            fluidRow(
-                                column(3,
-                                       uiOutput("bowlerFunc"), 
-                                       uiOutput("bowler")
-                                    
-                                ),
+                            sidebarPanel(
+                                selectInput('bowlerFunc', 'X Variable', IPLBowlerFuncs),
+                                selectInput('bowler', 'Y Variable', IPLBowlers,selectize=FALSE, size=20)
                                 
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("bowlerPlot")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
+                                
+                            ),
+                            mainPanel(
+                                plotOutput('bowlerPlot')
+                            )
+                                
                             
                    ),
                    # Analyze IPL matches
                    tabPanel("Analyze IPL matches",
                             # Application title
-                            titlePanel("Analyze IPL matches"),
+                            headerPanel('Iris k-means clustering'),
                             
-                            fluidRow(
-                                column(3,
-                                       uiOutput("IPLMatchFunctionList"), 
-                                       uiOutput("matchList"),
-                                       uiOutput("IPLTeam")
-                                       
-                                ),
+                            sidebarPanel(
+                                selectInput('matchFunc', 'X Variable', IPLMatchFuncs),
+                                selectInput('match', 'Y Variable', IPLMatches,selectize=FALSE, size=20),
+                                uiOutput("selectTeam")
+                                #selectInput('team', 'X Variable', team)
                                 
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("IPLMatchPlot")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
+                            ),
+                            mainPanel(
+                                plotOutput('IPLMatchPlot')
+                            )
                             
                    ),
                
