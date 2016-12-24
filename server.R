@@ -85,4 +85,19 @@ shinyServer(function(input, output,session) {
         analyzeIPLMatches2Teams(input$matches,input$matches2TeamFunc,input$team2,otherTeam)
         
     })
+    
+    output$IPLTeamPerfOverall <- renderPlot({  
+        rankValues <- c(1,2,3,4,5,6)
+        
+        output$Rank = renderUI({
+            selectInput('rank', 'Choose team',choices=rankValues,selected=input$rank)
+        })
+        
+        print(input$teamMatches)
+        m <- strsplit(as.character(input$teamMatches),"-")
+        
+        print(m[[1]][2])
+        analyzeIPLTeamPerfOverall(input$teamMatches,input$overallperfFunc,m[[1]][2],input$rank)
+        
+    })
 })

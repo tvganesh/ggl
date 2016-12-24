@@ -19,6 +19,9 @@ IPLMatches <- gsub(".RData","",a)
 a <-list.files("IPLMatches2teams/")
 IPLMatches2Teams <- gsub(".RData","",a)
 
+a <-list.files("allMatchesallOppn/")
+IPLTeamsAll <- gsub(".RData","",a)
+
 shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Batsman tab
                    tabPanel("Analyze batsman",
@@ -93,26 +96,20 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Analyze IPL Team Overall Perf
                    tabPanel("2 teams",
                             # Application title
-                            titlePanel("IPL Team Overall Perf"),
+                            # Application title
+                            headerPanel('Iris k-means clustering'),
                             
-                            fluidRow(
-                                column(3,
-                                       uiOutput("IPLTeamPerfOverallFunctionList"), 
-                                       uiOutput("OverallMatchesList"),
-                                       uiOutput("Rank")
-                                       
-                                ),
+                            sidebarPanel(
+                                selectInput('overallperfFunc', 'X Variable', IPLTeamOverallPerfFunc),
+                                selectInput('teamMatches', 'Y Variable', IPLTeamsAll,selectize=FALSE, size=13),
+                                uiOutput("Rank")
                                 
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("IPLTeamPerfOverall")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
+                                
+                            ),
+                            mainPanel(
+                                plotOutput('IPLTeamPerfOverall')
+                            ) 
+                  
                             
                    ),
                    tabPanel("About",
