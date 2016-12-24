@@ -40,9 +40,9 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             
                             fluidRow(
                                 column(3,
-                                       uiOutput("bowlerFunc"), 
-                                       uiOutput("bowler")
-                                    
+                                       uiOutput("bowlerFunctionList"), 
+                                       uiOutput("bowlerList")
+                                       
                                 ),
                                 
                                 # Show a plot of the generated distribution        
@@ -83,57 +83,7 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             
                    ),
                
-                   # Analyze 2 Teams IPL matches
-                   tabPanel("2 teams",
-                            # Application title
-                            titlePanel("2 teams IPL matches"),
-                            
-                            fluidRow(
-                                column(3,
-                                       uiOutput("IPLMatches2TeamsFunctionList"), 
-                                       uiOutput("AllMatchesList")
-                                       #uiOutput("IPLTeams")
-                                       
-                                ),
-                                
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("IPLMatch2TeamsPlot")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
-                            
-                   ),
-                   
-                   # Analyze IPL Team Overall Perf
-                   tabPanel("2 teams",
-                            # Application title
-                            titlePanel("IPL Team Overall Perf"),
-                            
-                            fluidRow(
-                                column(3,
-                                       uiOutput("IPLTeamPerfOverallFunctionList"), 
-                                       uiOutput("OverallMatchesList"),
-                                       uiOutput("Rank")
-                                       
-                                ),
-                                
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("IPLTeamPerfOverall")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
-                            )    
-                            
-                   ),
+                  
                    tabPanel("About",
                   h2("Sixer - cricketr's Shiny avatar"),
                   p("This Shiny app is based on the R package 'cricketr'. In this Shiny app, I use  the

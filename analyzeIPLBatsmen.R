@@ -13,7 +13,7 @@ analyzeIPLBatsmen <- function(IPLBatsman,func) {
    
    
     print(IPLBatsman)
-    loadIPLBatsmen()
+    
     # Return when name is NULL at start
     if(is.null(IPLBatsman))
         return()

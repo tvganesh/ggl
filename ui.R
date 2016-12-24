@@ -7,31 +7,24 @@
 # More details: https://gigadom.wordpress.com/
 #
 #########################################################################################################
-
+load("./batsmen.RData")
+IPLBatsmen <-b
 shinyUI(navbarPage("cricketr analyzes Cricketers!",
                    # Batsman tab
                    tabPanel("Analyze batsman",
-                            titlePanel("Analyze batsman"),
-  
-                            fluidRow(
-                                column(3,
-                                       uiOutput("batsmanFunctionList"),
-                                       uiOutput("batsmanList")
-                                       
-                                      
-                                ),
-  
-                                # Show a plot of the generated distribution        
-                                column(6,
-                                       plotOutput("batsmanPlot"),
-                                       textOutput("text1")
-                                ),
-                                column(7, offset=4,
-                                       tags$h5((tags$i("Designed and developed by Tinniam V Ganesh"))),
-                                       tags$h5((tags$i("Nov 28,2015"))),
-                                       tags$h6("Data source ESPN Cricinfo: http://stats.espncricinfo.com/ci/engine/stats/index.html")
-                                )
+                            headerPanel('Iris k-means clustering'),
+                            
+                            sidebarPanel(
+                                selectInput('batsmanFunc', 'X Variable', IPLBatsmanFuncs),
+                                selectInput('batsman', 'Y Variable', IPLBatsmen,selectize=FALSE, size=20)
+                                           
+                                
+                            ),
+                            mainPanel(
+                                plotOutput('batsmanPlot')
                             )
+                            
+                               
                    ),
                    # Bowlers tab
                    tabPanel("Analyze bowlers",
@@ -40,9 +33,9 @@ shinyUI(navbarPage("cricketr analyzes Cricketers!",
                             
                             fluidRow(
                                 column(3,
-                                       uiOutput("bowlerFunctionList"), 
-                                       uiOutput("bowlerList")
-                                       
+                                       uiOutput("bowlerFunc"), 
+                                       uiOutput("bowler")
+                                    
                                 ),
                                 
                                 # Show a plot of the generated distribution        
